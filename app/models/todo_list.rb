@@ -4,7 +4,7 @@ class TodoList < ActiveRecord::Base
 
 
   validates :description, presence: true
-  validates :description, length:  {minimum: 2}
+  validates :description, length:  {minimum: 3}
 
 
   has_many :todo_items
