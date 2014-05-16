@@ -7,12 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <% flash.each do |type, message| %>
-        <div class="alert flash <%=type%>">
-            <%= message %>
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <%= link_to "Odot", root_path, :class => "navbar-brand"  %>
+          <ul class="nav navbar-nav">
+            <li><%= link_to "Todo Lists", todo_lists_path %></li>
+            <li><a href="#">Link</a></li>
+          </ul>
         </div>
-    <% end %>
-<%= yield %>
 
+      </nav>
+      <% flash.each do |type, message| %>
+          <div class="alert flash <%=type%>">
+            <%= message %>
+           </div>
+      <% end %>
+      <div class="container">
+        <%= yield %>
+      </div>
 </body>
 </html>
